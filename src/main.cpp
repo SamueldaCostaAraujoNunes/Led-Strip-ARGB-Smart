@@ -22,13 +22,13 @@
 #include <sstream>
 #define RECV_PIN D5
 
-#define APP_KEY "d564dee3-7624-4a7d-8429-0a07242e6439"
-#define APP_SECRET "f3812377-261b-491c-9230-fb814a95e98f-28391983-cba3-42e4-a703-ad8e6387652d"
-#define DEVICE_ID "603f7b34fbb434731e289212"
+#define APP_KEY ""
+#define APP_SECRET ""
+#define DEVICE_ID ""
 #define INSTANCE_EFFECTS "Effects"
 
-#define SSID "FamiliaNunes"
-#define PASS "flatronez"
+#define SSID ""
+#define PASS ""
 
 #define LED_COUNT 125
 #define LED_PIN D3
@@ -615,23 +615,7 @@ void loop()
 {
   fita.service();
   SinricPro.handle();
-  // loopIrRecv();
+  // loopIrRecv(); // O receptor infravermelho não funciona muito bem, quando algum efeito está ativo. Caso deseje controlar a fita apenas pela alexa e Sinric Pro, mantenha comentado.
   // notifyPossibleChanges();
 }
 
-// void loop()
-// {
-//   fita.service();
-//   if (SinricPro.isConnected())
-//   {
-//     SinricPro.handle();
-//     notifyPossibleChanges();
-//   }else{
-//     loopIrRecv();
-//     int now = millis();
-//     if(now - 5000 > lastTimeIsConnected){
-//       SinricPro.handle();
-//       lastTimeIsConnected = now;
-//     }
-//   }
-// }
